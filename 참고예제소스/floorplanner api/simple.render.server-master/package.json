@@ -1,0 +1,30 @@
+{
+    "name": "@floorplanner/simple.render.server",
+    "description": "Simple server to render 2d and 3d floorplanner projects",
+    "main": "lib/core.js",
+    "repository": {
+        "type"  : "git",
+        "url"   : "git+ssh://git@github.com:floorplanner/simple.render.server.git"
+    },
+    "version": "0.1.0",
+    "dependencies": {
+        "express"       : ">=4.13.3",
+        "body-parser"   : ">=1.14.1",
+        "multer"        : "1.0.6",
+        "bluebird"      : "2.10.2",
+        "request"       : "2.65.0",
+        "aws-sdk"       : ">= 2.2.10",
+        "elementtree"   : "0.1.6",
+        "nodemailer"    : "1.8.0",
+        "config"        : "1.16.0",
+        "log4js"        : "0.6.27"
+    },
+    "devDependencies": {
+        "coffee-script"     : ">= 1.4.0"
+    },
+    "author": "Tim Knip",
+    "scripts" : {
+        "prepublish" : "coffee -o lib -c src"
+    },
+    "license": "proprietary"
+}

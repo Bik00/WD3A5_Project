@@ -1,0 +1,13 @@
+$LOAD_PATH.push(File.dirname(__FILE__))
+require 'matrix'
+require 'geom/number'
+require 'geom/vertex'
+require 'geom/triangle_mesh'
+require 'geom/polygon'
+require 'geom/triangle'
+require 'geom/plane'
+require 'geom/matrix3d'
+require 'geom/intersection'
+require 'geom/connection'
+require 'geom/edge'
+require 'geom/ear_trim'
