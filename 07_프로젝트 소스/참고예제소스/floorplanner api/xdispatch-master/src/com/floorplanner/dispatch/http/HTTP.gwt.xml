@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="xdispatchhttp">
+	<inherits name="com.floorplanner.dispatch.XDispatch" />
+    <inherits name="com.google.gwt.http.HTTP" />
+	<source path="" />
+</module>

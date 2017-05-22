@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="xdispatchcelery">
+    <inherits name="com.floorplanner.dispatch.XDispatch" />
+	<script src="lib/socket.io.min.js" />
+    <source path="" />
+</module>

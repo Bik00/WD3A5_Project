@@ -1,9 +1,0 @@
-fml2dae_cache
-*.swp
-*.fml
-*~
-assets/
-nbproject/
-cache
-.autotest
-*.gem

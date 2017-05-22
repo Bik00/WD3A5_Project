@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="xdispatchjsonp">
+    <inherits name="com.floorplanner.dispatch.XDispatch" />
+    <inherits name="com.google.gwt.jsonp.Jsonp" />
+	<source path="" />
+</module>

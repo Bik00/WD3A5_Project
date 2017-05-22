@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="xdispatch">
+	<inherits name="com.google.gwt.core.Core" />
+	<inherits name="com.google.gwt.inject.Inject" />
+	<inherits name="net.customware.gwt.dispatch.Dispatch" />
+	<source path="core" />
+</module>

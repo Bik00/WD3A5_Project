@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+    function uploadLogo() {
+      var fd = new FormData($("#logo-form")[0]);
+      fd.append("label", "WEBUPLOAD");
+      $.ajax({
+        url: "./image/upload",
+        type: "POST",
+        data: fd,
+        enctype: 'multipart/form-data',
+        processData: false,  // tell jQuery not to process the data
+        contentType: false   // tell jQuery not to set contentType
+      }).done(function( data ) {
+        $('#upload-logo')[0].style.display = "none";
+        $('#render')[0].style.display = "block";
+        getLogos();
+      });
+      return false;
+    }
+
+    function render() {
+      $('#result2d')[0].innerHTML = "rendering can take several minutes, please wait...";
+      $('#render-button')[0].disabled = true;
+      var type = $('#type').val()
+      var url = "./render/" + type + "/" +
+        $('#floorplanner-id').val() +
+        "/width/" + $('#width').val() +
+        "/height/" + $('#height').val() +
+        "/logo/" + $('#logos').val() +
+        "/recipient/" + $('#recipient').val() +
+        "/corner/" + $('#corner').val();
+      $.ajaxSetup({timeout:2400000}); //in milliseconds
+      $.ajax({url: url, success: function (data, status) {
+        $('#render-button')[0].disabled = false;
+        var json = JSON.parse(data);
+        try {
+          var urls = json.map(function (url) {
+            return "<a target=\"_new\" href=\"" + url +"\">" + url + "</a>";
+          }).join('<br/>');
+          $('#result2d')[0].innerHTML = urls;
+        } catch (e) {
+          console.error(e);
+        }
+      }});
+    }
+
+    function setLogo() {
+      var logo = $('#logos').val();
+      if (logo == "no logo") {
+        $('#logo')[0].src = "";
+        $('#logo')[0].style.display = "none";
+      } else {
+        $('#logo')[0].src = "/logo/" + logo;
+        $('#logo')[0].style.display = "block";
+      }
+    }
+
+    function getLogos() {
+      $.get("./logos", function (data, status) {
+        $('#logos')[0].innerHTML = data;
+        setLogo();
+      });
+    }
+
+    function toggleUpload(upload) {
+      if (upload) {
+        $('#upload-logo')[0].style.display='block';
+        $('#render')[0].style.display='none';
+      } else {
+        $('#upload-logo')[0].style.display='none';
+        $('#render')[0].style.display='block';
+      }
+    }
+    </script>
+  </head>
+  <body onload="getLogos()">
+    <div id="upload-logo" style="display:none">
+      <form method="POST" id="logo-form" onsubmit="return uploadLogo();">
+        <input type="file" name="logo">
+        <input type="submit" value="Upload Logo">
+        <input type="button" value="Cancel" onclick="toggleUpload(false)"></input>
+      </form>
+    </div>
+    <div id="render" style="display:block">
+      <div style="width:100%">
+        <div class="list"><div class="desc">recipient</div><input type="text" id="recipient" value="mathijs@floorplanner.com"></input></div>
+        <div class="list"><div class="desc" id="id-type">project-id</div>
+          <select id="type" onchange="if(this.value == 'project') {$('#id-type')[0].innerHTML='project-id'} else {$('#id-type')[0].innerHTML='design-id';$('#floorplanner-id')[0].value=''}">
+            <option value="project">project</option>
+            <!-- <option value="design">design</option> -->
+          </select>
+          <input type="text" id="floorplanner-id" value="35013561"></input>
+        </div>
+        <div class="list"><div class="desc">width</div><input type="text" id="width" value="1920"></input></div>
+        <div class="list"><div class="desc">height</div><input type="text" id="height" value="1080"></input></div>
+        <hr/>
+        <div class="list"><div class="desc">logo</div>
+          <select id="logos" onchange="setLogo()">
+          </select>
+          <input type="button" value="add new logo" onclick="toggleUpload(true)"></input>
+        </div>
+        <div class="list"><div class="desc">logo placement</div>
+          <select id="corner">
+            <option value="B">Bottom center</option>
+            <option value="BL">Bottom left</option>
+            <option value="BR">Bottom right</option>
+            <option value="T">Top center</option>
+            <option value="TL">Top left</option>
+            <option value="TR">Topt right</option>
+          </select>
+        </div>
+        <img id="logo" width="640" style="display:none"></img>
+        <hr/>
+        <input type="button" id="render-button" value="render" onclick="render()"></input>
+      </div>
+      <div id="result2d"></div>
+    </div>
+  </body>
+</html>
