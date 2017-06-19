@@ -1,0 +1,38 @@
+/*  CART 제목 */
+.cart_title {
+	margin: auto;
+	float: center;
+	color: #ef5470;
+}
+
+
+
+/*장바구니 상품 테이블 속성 */
+.cart_table-responsive {
+	margin: auto;
+	text-align: center;
+	position: relative;
+	margin-top: 10px;
+}
+/*장바구니 상품 테이블 속성 */
+.cart_table {
+	margin: auto;
+	width:100%;
+}
+/*장바구니 상품 테이블 이미지!!  */
+.cart_table img {
+	width: 20%;
+}
+/*  밑에 총상품금액 결제예정금액 table  */
+.cart_cartOrder {
+	margin: auto;
+	float: center;
+}
+
+/*  cart page 내 모든 버튼  */
+
+.cart_btn {
+	
+	
+    color: #ef5470;
+}

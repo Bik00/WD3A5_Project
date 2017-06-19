@@ -1,0 +1,22 @@
+#modifyForm_title {
+    float: center;
+    font-weight: bold;
+       color: #ef5470;
+}
+.modify {
+    width: 50%;
+    margin: auto;
+ }
+.modifyForm_table{
+    padding: 10px;
+    width: 50%;
+
+}
+
+.form-horizontal {
+    width: 50%;
+    margin: auto;
+}
+.modifyForm_btn {
+    color: #ef5470;
+}

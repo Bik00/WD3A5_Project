@@ -1,0 +1,28 @@
+.form-horizontal {
+    margin-top:30px;
+}
+#btnBox {
+    margin-left: 10%;
+    width: 100%;
+}
+.loginForm_btn {
+    width: 41%;
+    color: #ef5470;
+    font-weight: bold;
+}
+.loginForm_text {
+    font-size: 1.2em;
+    color: #ef5470;
+}
+.loginForm_title {
+    text-align: center;
+    background: #ef5470;
+    color: white;
+    width: 50%;
+    margin: auto;
+}
+.loginForm {
+    width: 800px;
+    margin: auto;
+    margin-top: 18%;
+}

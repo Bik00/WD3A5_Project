@@ -1,0 +1,42 @@
+.categorySetting {
+    margin: auto;
+    width: 70%;
+    height: 700px;
+    border: solid 1px;
+    padding: 25px;
+    margin:auto;
+    margin-left: 300px;
+}
+.category {
+    border: solid 1px;
+    width: 320px;
+    height: 550px;
+    float: left;
+
+}
+.myCategory {
+    width: 300px;
+    height: 500px;
+    border: double 4px;
+    margin: 10px;
+	list-style-type: none;
+	display: inline-block;
+}
+.myCategory li {
+	display: inline-blick;
+}
+.setting {
+	display: inline-block;
+    width: 300px;
+    height: 500px;
+    margin: 10px;
+    margin-top: -500px;
+    margin-left: 320px;
+    position: absolute;
+}
+.categoryTitle {
+    width: 250px;
+}
+.cateSubmit{
+	margin: auto;	
+}

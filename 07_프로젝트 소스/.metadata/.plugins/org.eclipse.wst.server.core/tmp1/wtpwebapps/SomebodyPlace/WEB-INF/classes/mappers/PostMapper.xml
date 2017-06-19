@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="yjc.wdb.somebodyplace.PostMapper">
+	<insert id="insertPost">
+		<selectKey resultType="int" keyProperty="product_code" order="BEFORE">
+	        SELECT MAX(product_code) FROM product        
+	    </selectKey>  
+		insert into post(product_code, hashtag, mcate_code, dcate_code, board_code, type)
+		values (#{product_code}, #{hashtag}, #{mcate_code}, #{dcate_code}, #{board_code}, #{type})
+	</insert>
+	<select id="selectPostCode" resultType="int">
+		select post_code from post where product_code = #{product_code}
+	</select>
+	<select id="selectProductCode" resultType="int">
+		select product_code from post where board_code = #{board_code}
+	</select>
+</mapper>

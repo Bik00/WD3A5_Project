@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="yjc.wdb.somebodyplace.OptionMapper">
+	<insert id="insertOption">
+		<selectKey resultType="int" keyProperty="product_code" order="BEFORE">
+	        SELECT MAX(product_code) FROM product        
+	    </selectKey>  
+		insert into option(product_code, option_name)
+		values (#{product_code},#{option_name})
+	</insert>
+	<select id="selectOptionCode" resultType="int">
+		select Max(option_code) from option
+	</select>
+	<select id="selectOption" resultType="Option">
+		select * from option where product_code = #{product_code}
+	</select>
+</mapper>

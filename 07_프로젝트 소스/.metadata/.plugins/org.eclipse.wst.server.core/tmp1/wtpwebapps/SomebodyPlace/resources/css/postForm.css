@@ -1,0 +1,369 @@
+@CHARSET "UTF-8";
+body, html { height: 100%;}
+.postForm { display: table; position: relative; min-height: 400px; height: auto; width: 100%; margin-top: 3%;}
+/* 게시글 등록 버튼 */
+.post_register{
+	margin: 1%;
+	float: right;
+	border-bottom: 1px solid #EAEAEA;
+}
+
+/* 게시글 등록 창*/
+.postRegisterBox {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	background: rgba(255,255,255, 0);
+    z-index: 1;
+    display: none;
+}
+.postRegisterForm {
+    position: fixed;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    background: #fcfcfc;
+    box-shadow: 5px 5px 5px #888888;
+    top: 25%;
+    left: 25%;
+    overflow: hidden;
+}
+.postRegisterForm_delBtn {
+    float: right;
+    font-size: 150%;
+    padding: 1%;
+    cursor: pointer;
+}
+.postRegisterForm_input {
+    margin: 10%;
+
+}
+/* 해시태그 박스 */
+.post_hashBox {
+    height: auto;
+    max-height: 300px;
+}
+.postRegisterForm_delBtn:hover {
+    background: #eaeaea;
+}
+.inputHash {
+    display: inline-block;
+}
+.inputHash:hover {
+    background: silver;
+    cursor: pointer;
+}
+/* 해시태그 말풍선 */
+.arrow_box {
+  display: none;
+  position: absolute;
+  padding: 5px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;  
+  border-radius: 8px;
+  background: #333;
+  color: #fff;
+}
+.arrow_box:after {
+  position: absolute;
+  bottom: 100%;
+  left: 10%;
+  width: 0;
+  height: 0;
+  margin-left: -10px;
+  border: solid transparent;
+  border-color: rgba(51, 51, 51, 0);
+  border-bottom-color: #333;
+  border-width: 5px;
+  pointer-events: none;
+  content: " ";
+}
+span:hover + p.arrow_box {
+  display: block;
+}
+
+/* 이미지 */
+.post_fileBox {
+    display: inline-table;
+    height: auto; 
+    width: 700px;
+    display: table-cell;
+    vertical-align: top;
+}
+.post_fileBox label {
+    width: 100%;
+    height: 400px;
+    background: #EAEAEA;
+    text-align: center;
+    display: inline-table;
+    cursor: pointer;
+}
+.post_fileBox label>p {
+    color: gray;
+    font-size: 120%;
+    display: table-cell; 
+    vertical-align: middle;
+}
+.post_fileBox label:hover{
+    background: silver;
+}
+.post_fileBox input[type=file] {
+    position: fixed;
+    display: none;
+}
+
+/* 타입 */
+.postForm_type {
+    display: inline-block;
+    left: 8%;
+    width: 80%;
+    height: auto;
+    position: relative;
+}
+.postForm_type div {
+    margin-bottom: 10px;
+}
+/* 상품명 */
+.postForm_title {
+    width: 100%;
+    height: 10%;
+    font-size: 1.5em;
+    text-align: center;
+    margin: 2% auto 2% auto; 
+}
+/* 상품 설명 */
+.postForm_description { 
+    height: 20%;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+}
+/* 상품 가격 */
+.postForm_price {
+    margin-top: 2%;
+    height: 40px;
+}
+.postForm_price span {
+    float: right;
+}
+
+/* 추가 옵션 버튼 */
+.postForm_optionBtn {
+    width: 100%;
+    height: 50px;
+    background: #EAEAEA;
+    text-align: center;
+    color: gray;
+    display: inline-table;
+    cursor: pointer;
+}
+.postForm_optionBtn p {
+    display: table-cell; 
+    vertical-align: middle;
+}
+.postForm_optionBtn:hover {
+    background: silver;
+}
+
+/* 추가옵션 박스 */
+.postForm_optionBox {
+    border-bottom: 1px solid silver;
+    margin-top: 3%;
+    padding-bottom: 3%;
+}
+.postForm_optionBox:hover{
+    background: #EAEAEA;
+}
+.optionBox_plus {
+    width: 30px;
+    height: 30px;
+    background: #EAEAEA;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    font-size: 150%;
+    margin-left: 0.5%;
+    cursor: pointer;
+    color: gray;
+}
+.optionBox_minus {
+    width: 30px;
+    height: 30px;
+    background: #EAEAEA;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    font-size: 150%;
+    margin-left: 0.5%;
+    cursor: pointer;
+    color: gray;
+}
+.optionBox_plus:hover {
+    background: silver;
+}
+.post_optionBox_del {
+    width: 6%;
+    text-align: center;
+    display: inline-block;
+    font-size: 150%;
+    cursor: pointer;
+    color: gray;
+    padding: 0;
+    height: 0;
+}
+
+/* 수량 */
+.postForm_quantity {
+    display: none;
+}
+
+/* 처리 버튼 */
+.postForm_btns {
+    height: 10%;
+    border-bottom-color: white;
+    display: none;
+}
+.postForm_cart{
+    width: 49%;
+    color: #da405c;
+}
+.postForm_request {
+    width: 49%;
+    background: #da405c;
+    color: white;
+    
+}
+
+/* 에디터 */
+.bulletinForm_editor {
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+}
+.bulletinForm_editor>h3 {
+    border-bottom: 1px solid silver;
+    padding: 10px;
+}
+/* 에디터 드래그 박스 */
+.drag_box {
+    padding: 0;
+    list-style-type: none;
+    margin: 0px;
+    display: inline-block;
+    width: 100%;
+}
+/* 에디터 텍스트 박스 */
+.drag_txtbox {
+    width: 100%;
+    margin-bottom: 10px;
+    min-height: 50px;
+    height: auto;
+    display: inline-block;
+    cursor: pointer;
+    padding-left: 0px;
+}
+.drag_txtbox:hover {
+    border: 1px solid #eaeaea;
+}
+.drag_txtbox:active {
+    background: #EAEAEA;
+}
+.drag_txtbox textarea {
+    width: 93%;
+    min-width: 93%;
+    height: 30px;
+    margin: 7px;
+    border: none;
+    background: none;
+    overflow: hidden;
+    resize: none;
+    padding: 0;
+    font-size: 120%;
+    vertical-align: middle;
+}
+.drag_txtbox textarea:focus {
+    outline: none;
+    padding: 0;
+}
+.txtbox_plus {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: inline-block;
+    visibility: hidden;
+    font-size: 150%;
+    cursor: pointer;
+    color: gray;
+}
+.txtbox_plus:hover{
+    background: silver;
+}
+.txtbox_minus {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: inline-block;
+    visibility: hidden;
+    font-size: 150%;
+    cursor: pointer;
+    color: gray; 
+}
+.txtbox_minus:hover{
+    background: silver;
+}
+
+/* 에디터 이미지 박스 */
+.drag_imgbox {
+    display: inline-block;
+    height: auto; 
+    width: 100%;
+    vertical-align: top;
+}
+.drag_imgbox label {
+    width: 93%;
+    height: 50px;
+    background: #EAEAEA;
+    text-align: center;
+    display: inline-table;
+    cursor: pointer;
+}
+.drag_imgbox label>p {
+    color: gray;
+    font-size: 120%;
+    display: table-cell; 
+    vertical-align: middle;
+}
+.drag_imgbox label:hover{
+    background: silver;
+}
+.drag_imgbox input[type=file] {
+    position: fixed;
+    display: none;
+}
+.imgbox_plus {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: inline-block;
+    visibility: hidden;
+    font-size: 150%;
+    cursor: pointer;
+    color: gray;
+}
+.imgbox_plus:hover{
+    background: silver;
+}
+.imgbox_minus {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: inline-block;
+    visibility: hidden;
+    font-size: 150%;
+    cursor: pointer;
+    color: gray; 
+}
+.imgbox_minus:hover{
+    background: silver;
+}

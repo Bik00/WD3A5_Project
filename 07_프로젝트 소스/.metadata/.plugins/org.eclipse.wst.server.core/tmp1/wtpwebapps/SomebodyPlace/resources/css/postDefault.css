@@ -1,0 +1,81 @@
+@CHARSET "UTF-8";
+.post_default {
+    margin-top: 15px;
+}
+/* 이미지 */
+.post_img {
+    width: 780px;
+    height: auto;
+    border: 1px solid #EAEAEA;
+    display : table-cell;
+}
+.post_no_img {
+    width: 760px;
+    background: #EAEAEA;
+    height: 380px;
+    margin: 10px;
+}
+.post_no_img > p {
+    color: gray;
+    font-size: 2em;
+    text-align: center;
+    padding-top: 150px;
+}
+ 
+/* 타입 */
+.post_type {
+    width: 523px;
+    height: auto;
+    left: 20px;
+    position: relative;
+    display: table-cell;
+    vertical-align: top;
+}
+.post_type div {
+    margin-bottom: 10px;
+}
+/* 상품명 */
+.post_title {
+    height: 60px;
+    font-size: 2em;
+    text-align: center;
+    padding-top: 10px;
+    border-bottom: 1px solid #EAEAEA;
+}
+/* 상품 설명 */
+.post_description { 
+    height: 70px;
+}
+/* 상품 가격 */
+.post_price {
+    height: 30px;
+}
+/* 상품 옵션 */
+.post_options {
+    height: auto;
+}
+/* 처리 버튼 */
+.post_btns {
+    height: 90px;
+    border-bottom-color: white;
+}
+.post_request {
+    margin: 10px;
+    width: 500px;
+    background: #da405c;
+    color: white;
+}
+.post_cart, .post_wish {
+    margin: 0 0 0 10px; 
+    width: 243px;
+    color: #da405c;
+}
+/* 상세설명을 위한 에디터창 */
+.post_content {
+    width: 100%;
+    height: auto;
+    min-heght: 500px;
+    border: 1px solid #EAEAEA;
+    margin-top: 10px;
+}
+ @CHARSET "UTF-8";

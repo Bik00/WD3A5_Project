@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="Post" type="yjc.wdb.somebodyplace.bean.Post" />
+		<typeAlias alias="PostContent" type="yjc.wdb.somebodyplace.bean.PostContent" />
+		<typeAlias alias="Product" type="yjc.wdb.somebodyplace.bean.Product" />
+		<typeAlias alias="Option" type="yjc.wdb.somebodyplace.bean.Option" />
+		<typeAlias alias="Detail" type="yjc.wdb.somebodyplace.bean.Detail" />
+		<typeAlias alias="Mcate" type="yjc.wdb.somebodyplace.bean.Mcate" />
+		<typeAlias alias="Dcate" type="yjc.wdb.somebodyplace.bean.Dcate" />
+		<typeAlias alias="Member" type="yjc.wdb.somebodyplace.bean.Member" />
+		<typeAlias alias="Chatting" type="yjc.wdb.somebodyplace.bean.Chatting" />
+		<typeAlias alias="place" type="yjc.wdb.somebodyplace.bean.Place" />
+		<typeAlias alias="issue" type="yjc.wdb.somebodyplace.bean.Issue" />
+		<typeAlias alias="Board" type="yjc.wdb.somebodyplace.bean.Board" />
+		<typeAlias alias="Auto" type="yjc.wdb.somebodyplace.bean.Auto" />
+	</typeAliases>
+</configuration>

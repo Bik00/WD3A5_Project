@@ -1,0 +1,32 @@
+.orderDate {
+	margin: auto;
+	margin-top: 10px;
+	width: 90%;
+	padding: 10px;
+	border: solid 5px #EAEAEA;
+}
+.requestForm {
+	width:50%;
+}
+.table-responsive {
+	margin: auto;
+	text-align: center;
+	position: relative;
+	margin-top: 10px;
+}
+.table {
+	margin: auto;
+	width: 100%;
+}
+.table img{
+	width:40%;
+	height:40%;
+}
+h2 {
+	margin: auto;
+	float: center;
+	color: #ef5470;
+}
+.btn {
+    color: #ef5470;
+}

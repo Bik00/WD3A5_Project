@@ -1,0 +1,23 @@
+/*icon 전체를 감싸고 있는 div */
+.mypage_outdiv{
+
+	/*border: 1px solid black;*/
+	width: 700px ;
+	height:400px;
+ 	margin:auto;
+}
+/*icon(메뉴 ) 하나하나 의 div */
+.mypage_indiv{
+
+	/*border: 1px solid black;*/
+	width: 180px ;
+	height:130px;
+    padding:10px;
+    margin-left: 30px;
+    margin-top:50px;
+    float:left;   
+}
+/*img 아이콘 */
+.mypage_icon{
+	width:70px;height:70px;
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="yjc.wdb.somebodyplace.PostContentMapper">
+	<insert id="insertPostContent">
+		<selectKey resultType="int" keyProperty="post_code" order="BEFORE">
+	        SELECT MAX(post_code) FROM post        
+	    </selectKey>  
+		insert into post_content(post_code, content)
+		values (#{post_code},#{content})
+	</insert>
+	<select id="selectPostContent" resultType="PostContent">
+		select * from post_content where post_code = #{post_code}
+	</select>
+</mapper>

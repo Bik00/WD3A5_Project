@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="yjc.wdb.placeMapper">	<!-- namespace를 이용해서 이 파일에 접근 -->
+  <!-- 회원코드로 플레이스 코드 찾기 -->
+  <select id="getPlaceCode" resultType="int">
+  	select place_code from place 
+  	where member_code = #{member_code}
+  </select>
+  
+  <insert id="create">
+  	insert into Place(place_name,member_code,member_email,place_logo,mcate_code,dcate_code)
+  	values(#{place_name},#{member_code},#{member_email},#{place_logo}, #{mcate_code}, #{dcate_code})
+  </insert>
+  
+  <select id="read" resultType="String">	<!-- 이메일로 플레이스명을 찾음 -->
+  	select place_name from place
+  	where member_email =#{member_email}
+  </select>
+  
+    <select id="searchlogo" resultType="String">	<!--회원코드로 로고를 찾음  -->
+  	select place_logo from place
+  	where member_code =#{member_code}
+  </select>
+  
+    <select id="searchcategori1" resultType="String">	<!--회원코드로 메인카테고리를 찾음  -->
+  	select mcate_code from place
+  	where member_code =#{member_code}
+  </select>
+  
+    <select id="searchcategori2" resultType="String">	<!--회원코드로 세부카테고리를 찾음  -->
+  	select dcate_code from place
+  	where member_code =#{member_code}
+  </select>
+  
+  
+    <select id="makechoice" resultType="Integer">	<!-- 코드로 플레이스를 생성한지 안한지 찾음 이쿼리값이 있으면 플레이스가 있는거!!!-->
+  	select member_code from place
+  	where member_code =#{member_code}
+  </select>
+  
+  
+  <!-- 칼럼이름과 Mapping 프로퍼티의 이름이 다른경우 매핑을 하고싶다면 mybatis-config.xml에서 설정 해줘야됨 -->
+  <update id="update">
+  	update tbl_board set title=#{title}, content=#{content}
+  	where bno = #{bno}
+  </update>
+  
+  <delete id="delete">
+  	delete from tbl_board
+  	where bno = #{bno}
+  </delete>
+  
+  <select id="listAll" resultType="place">  <!-- 별칭사용 -->
+  		select * from place
+  	where member_code = #{member_code}
+  </select>
+  
+  <select id="listPage" resultType="place">
+  	select *
+  	from tbl_board
+  	order by bno desc
+  	limit #{startRecord}, #{recordsPerPage}
+</select>
+
+  
+  	<select id="totalCount" resultType="Integer">
+  		select count(*) from tbl_board
+  	</select>
+
+
+
+  
+</mapper>
