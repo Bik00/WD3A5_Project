@@ -1,0 +1,26 @@
+
+/*div 전체 감싸고 있는 Form*/ 
+.joinForm{
+    width: 70%;
+    margin: auto;
+    margin-top: 10%;
+}
+
+/*회원가입 글씨*/ 
+.joinForm_title {
+    text-align: center;
+    background: #ef5470;
+    color: white;
+    width: 50%;
+    margin: auto;
+}
+
+
+/*주소검색,회원가입, 가입취소 버튼*/ 
+.joinForm_btn{
+    width: 25%;
+    background-color: #ef5470;
+   color:white;
+    font-weight: bold;
+}
+

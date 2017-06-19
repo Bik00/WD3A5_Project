@@ -1,0 +1,18 @@
+
+        .addForm{
+            width:50%;
+            margin:auto;
+        }
+
+        .addBtn {
+            background-color:#da405c;
+            color:white;
+        }
+        .addBtn:hover {
+            background-color:#da405c;
+            color:white;
+        }
+
+        .YaKwan {
+            color:#da405c;
+        }

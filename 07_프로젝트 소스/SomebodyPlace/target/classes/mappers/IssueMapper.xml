@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="yjc.wdb.issueMapper">	<!-- namespace를 이용해서 이 파일에 접근 -->
+  <!-- sql 문은 다 mapper에 작성 -->
+  <insert id="create">
+  	insert into Issue(issue_content,member_code,issue_img,address, lat, lng, radius, hashtag)
+  	values(#{issue_content},#{member_code}, #{issue_img},#{address}, #{lat}, #{lng}, #{radius}, #{hashtag})
+  </insert>
+  
+    <select id="listAll" resultType="issue">  <!-- 별칭사용 -->
+ 
+		select b.member_code,a.member_nickname ,b.issue_code, b.issue_content, b.issue_img,b.address,b.lat,b.lng,b.post_time,b.hashtag
+		from member a,issue b
+		where a.member_code= b.member_code 
+		order by issue_code desc
+  </select>
+  
+    <select id="searchlistAll" resultType="issue">  <!-- 별칭사용 -->
+select *
+from issue
+where hashtag like CONCAT('%', #{search_keyword}, '%') or issue_content like CONCAT('%', #{search_keyword}, '%');
+
+  </select>
+  
+  <delete id="delete">
+     delete from issue 
+	where issue_code=#{issue_code}
+  </delete>
+  
+  
+</mapper>

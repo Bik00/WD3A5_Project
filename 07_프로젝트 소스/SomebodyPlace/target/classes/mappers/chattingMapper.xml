@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Chatting">	<!-- namespace를 이용해서 이 파일에 접근 -->
+
+	<update id="addChat">
+		insert into chat (chat_sender, chat_receiver, chat_content)
+		values(#{sender}, #{receiver}, #{content});
+	</update>
+	
+	<delete id="delChat">
+		delete from chat
+		where chat_sender in(#{receiver}, #{sender})
+		and chat_receiver in(#{receiver}, #{sender})
+		and not chat_receiver = chat_sender
+	</delete>
+	
+	<select id="getRooms" resultType="Chatting">
+		select m.member_nickname as "chat_sender", c.chat_sender as "sender", c.chat_receiver, c.chat_content, d.chat_time 
+		from member m, chat c, (select c.chat_sender as sender, max(c.chat_time) as chat_time
+										from member m, chat c
+										where m.member_code = c.chat_sender
+										and c.chat_receiver = #{receiver}
+										group by c.chat_sender) d
+		where m.member_code=d.sender and m.member_code = c.chat_sender and c.chat_time = d.chat_time
+		order by d.chat_time desc
+	</select>
+	
+	<select id="chatList" resultType="Chatting">
+		select m.member_nickname as "sender", c.chat_sender, c.chat_receiver, c.chat_content, c.chat_time
+		from member m, chat c
+		where m.member_code = c.chat_sender
+		and c.chat_receiver in(#{receiver}, #{sender})
+		and c.chat_sender in(#{receiver},#{sender})
+		and not c.chat_receiver = c.chat_sender
+		order by c.chat_time
+	</select>
+	
+	<select id="getSenderNum" resultType="int">
+		select  c.chat_sender
+		from member m, chat c
+		where m.member_code = c.chat_sender
+		and m.member_nickname = #{sender}
+		LIMIT 1;
+	</select>
+	
+	<select id="getReceiverName" resultType="java.lang.String">
+		select member_nickname
+		from member
+		where member_code = #{receiver}
+	</select>
+	
+	<update id="addDist">
+		update chat
+		set chat_status = 1
+		where chat_receiver = #{receiver}
+		and chat_time = now()
+	</update>
+	
+	<update id="readDist">
+		update chat
+		set chat_status = 0
+		where chat_receiver = #{sender}
+		and chat_sender = #{receiver}
+	</update>
+	
+	<select id="countDist" resultType="int">
+		select count(*)
+		from chat
+		where chat_status = 1
+		and chat_receiver = #{receiver}
+	</select>
+	
+	<select id="countChatsInRoom" resultType="int">
+		select count(*)
+		from chat
+		where chat_status = 1
+		and chat_receiver = #{receiver}
+		and chat_sender = #{sender}
+	</select>
+	
+	<update id="addAutoList">
+		insert into auto (auto_code, auto_title)
+		values (#{auto_code}, #{auto_title})
+	</update>
+	
+	<delete id="delAutoList">
+		delete from auto
+		where auto_code=#{auto_code}
+		and auto_title=#{auto_title}
+	</delete>
+	
+	<select id="readAutoList" resultType="Auto">
+		select auto_code, auto_title, auto_content
+		from auto
+		where auto_code = #{auto_code}
+	</select>
+	
+	<update id="addAuto">
+		update auto
+		set auto_content = #{auto_content}
+		where auto_title = #{auto_title}
+		and auto_code = #{auto_code}
+	</update>
+	
+	<select id="readAuto" resultType="Auto">
+		select a.auto_content, m.member_nickname
+		from auto a, member m
+		where a.auto_code = m.member_code
+		and auto_title = #{auto_title}
+		and auto_code= #{auto_code}
+	</select>
+</mapper>

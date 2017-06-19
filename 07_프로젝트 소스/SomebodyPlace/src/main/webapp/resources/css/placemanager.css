@@ -1,0 +1,107 @@
+/* �뵆�젅�씠�뒪 愿�由� 移댄뀒怨좊━*/
+.placemanager_category {
+    /*border: 1px dashed skyblue;*/
+    width:20%;
+    margin-top: 10px;
+    background: #da405c;
+    box-shadow : 0 5px 20px 0 rgba(0,0,0,0.25), 0 5px 60px 0 rgba(0,0,0,0.19);
+    float:left;
+}
+.placemanager_category a {
+    text-align:center;
+    padding-top:20px;
+    padding-bottom:20px;
+    display: block;
+    color: white;
+    font-size: 1.2em;
+}
+
+/* �뵆�젅�씠�뒪 愿�由� �궡�슜 */
+
+.placemanager_content {
+    margin-top:10px;
+    margin-left:3%;
+    width:77%;
+    height:50%;
+    background-color:white;
+    float:left;
+}
+
+/* �뵆�젅�씠�뒪 愿�由� - �젙�궛 �궡�뿭 */
+
+.placemanager_budget {
+    box-shadow : 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+}
+.placemanager_budget_title {
+    font-size:26px;
+    background-color:white;
+    vertical-align:middle;
+    line-height:300%;
+    padding-left:50px;
+}
+.placemanager_budget_content {
+    margin:auto;
+    padding-bottom:20px;
+}
+.budget_more {
+    color: #ef5470;
+    font-weight: bold;
+    float:right;
+    margin-right:10%;
+}
+
+.placemanager_budget_more {
+    height:40px;
+}
+/* �뵆�젅�씠�뒪 愿�由� - �떊泥� �궡�뿭 */
+
+.placemanager_request {
+    width:100%;
+    box-shadow : 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+    margin-top:50px;
+}
+.placemanager_request_title {
+    width:100%;
+    height:80px;
+    background-color:white;
+    font-size:26px;
+    vertical-align:middle;
+    line-height:300%;
+    padding-left:50px;
+}
+.placemanager_request_content {
+    width:80%;
+    margin:auto;
+    padding-bottom:20px;
+}
+.placemanager_request_more {
+    margin:auto;
+    padding-bottom:20px;
+    text-align:center;
+}
+.request_more {
+    color: #ef5470;
+    font-weight: bold;
+}
+
+/* �뵆�젅�씠�뒪 愿�由� - �긽�뭹 �궡�뿭 */
+
+.placemanager_product {
+    width:100%;
+    box-shadow : 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+    margin-top:50px;
+    margin-bottom:100px;
+}
+.placemanager_product_title {
+    width:100%;
+    height:80px;
+    font-size:26px;
+    vertical-align:middle;
+    line-height:300%;
+    padding-left:50px;
+}
+.placemanager_product_content {
+    width:80%;
+    margin:auto;
+    padding-bottom:20px;
+}

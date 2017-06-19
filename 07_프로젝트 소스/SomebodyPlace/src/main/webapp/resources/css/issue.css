@@ -1,0 +1,195 @@
+body, html {
+    height:100%;
+    width:100%;
+}
+
+.categori {
+    border: 1px solid #da405c; 
+    height: auto;
+    padding:10px;
+    width: 170px ;
+    height:50px;
+    float:left;
+    margin-left: 30px;
+}
+
+.issue {
+    height:100%;
+    width:100%;
+    margin:auto;
+}
+
+.issue_searchDiv{
+	margin-left:25%;
+}
+
+.issue_searchForm{
+	width:50%;
+	margn:auto;
+}
+
+.issue_contents {
+    width:100%;
+    margin:auto;
+}
+
+.issue_search {
+    margin: 4% 0% 4% 22%;
+}
+
+/* 이슈 */
+.issue_box {
+    background: #FAFAFA;
+    border : 1px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    height: auto;
+    padding:3%;
+    width: 100%;
+    margin:auto;
+    margin-top:50px;
+    line-height:2.3em;
+}
+.m_issue_addIssuebtn{
+	display:none;
+}
+
+ 
+
+ 
+ 
+.issue_top {
+    width:100%;
+    margin-top:10px;
+    margin-bottom:100px;
+}
+.issue_picture {
+    float:left;
+    width:80px;
+    margin-left:30px;
+    margin-right:15px;
+}
+
+.issue_picture>img {
+    width:100%;
+    border-radius:50%;
+}
+.issue_profile {
+    color: gray;
+    font-size: 14px;
+    line-height:1.5em;
+    float:left;
+    margin-top:20px;
+}
+.issue_setting {
+    cursor: pointer;
+    float:right;
+}
+.issue_setting > img {
+    width: 25px;
+}
+
+.issue_content {
+    background: white;
+    height: 75%;
+    padding:40px;
+    border : 1px solid black;
+    font-size:20px;
+}
+
+.issue_content>img {
+   width:100%;
+}
+
+.settingDiv{
+    background-color: white;
+    position : absolute;
+    top : 20%;
+    left : 30%;
+    z-index : 1000;
+    display:none;
+    margin:auto;
+    border: 1px solid #da405c; 
+    padding:10px; width: 200px ;height:100px;
+}
+
+.btn {
+    color: #ef5470;
+    font-weight: bold;
+}
+.btn:hover {
+    color: #ef5470;
+}
+
+/* �뙎湲��엯�젰李� */
+
+.reply_btn {
+    margin-top: 3%;
+}
+.reply_count {
+    float: right;
+}
+
+.reply_list {
+    background-color:white;
+    width:100%;
+    height:auto;
+    margin-top:30px;
+    border-top : 1px solid #EAEAEA;
+}
+
+.reply_comment {
+    margin-top:20px;
+    width:100%;
+}
+
+.reply_picture {
+    float:left;
+    width:80px;
+    margin-left:30px;
+    margin-right:15px;
+}
+
+.reply_picture>img {
+    width:100%;
+    border-radius:50%;
+}
+.reply_profile {
+    color: gray;
+    font-size: 14px;
+    line-height:1.5em;
+    float:left;
+    margin-top:20px;
+}
+
+.reply_text {
+    float:middle;
+    margin-left:250px;
+    margin-right:10%;
+}
+
+.reply_setting {
+    cursor: pointer;
+    float:right;
+    margin-left:1%;
+    width:9%;
+}
+
+/* �뙎湲� �엯�젰李� */
+
+.reply_textarea {
+    margin-top:20px;
+    width:100%;
+}
+
+.reply_addText {
+    margin-top:20px;
+    width:90%;
+    float:left;
+}
+
+.reply_addTextBtn {
+    margin-top:20px;
+    margin-left:1%;
+    width:9%;
+    float:middle;
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="yjc.wdb.somebodyplace.BoardMapper">
+	<insert id="insertInit">
+		<selectKey resultType="int" keyProperty="place_code" order="BEFORE">
+	        SELECT MAX(place_code) FROM place        
+	    </selectKey>
+	    insert into board(place_code, board_name)
+	    values(#{place_code}, #{board_name})
+	</insert>  
+	<select id="selectBoardList" resultType="Board">
+		select * from board
+		where place_code = #{place_code}
+	</select>
+	<insert id="insertBoard">
+		insert into board(place_code, board_name)
+		values(#{place_code}, #{board_name})
+	</insert>
+	<update id="updateBoard">
+		update board
+		set board_name = #{board_name}
+		where board_code = #{board_code}
+	</update>
+	<delete id="deleteBoard">
+		delete from board
+		where board_code = #{del_code}
+	</delete>
+</mapper>

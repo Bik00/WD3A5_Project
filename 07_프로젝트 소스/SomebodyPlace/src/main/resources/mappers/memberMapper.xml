@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="yjc.wdb.memberMapper">   <!-- namespace를 이용해서 이 파일에 접근 -->
+  <!-- sql 문은 다 mapper에 작성 -->
+  
+  <insert id="create">
+     insert into member(member_email, member_pw, member_nickname, member_birth, member_lng, member_lat,member_age,member_gender)
+     values(#{member_email}, #{member_pw}, #{member_nickname}, #{member_birth}, #{member_lng}, #{member_lat} ,#{member_age}, #{member_gender})
+  </insert>
+  
+  <select id="read" resultType="String">   <!-- 풀네임을 사용해야함 (하기싫으면 따로 설정해주기) -->
+     select member_nickname from member
+     where member_code = #{member_code}
+  </select>
+  
+    <select id="read2" resultType="Integer">   <!-- 풀네임을 사용해야함 (하기싫으면 따로 설정해주기) -->
+     select * from member
+     where member_email = #{member_email}
+  </select>
+
+  
+  
+  <!-- 칼럼이름과 Mapping 프로퍼티의 이름이 다른경우 매핑을 하고싶다면 mybatis-config.xml에서 설정 해줘야됨 -->
+ <update id="update">
+    update member set member_email=#{member_email}, member_pw=#{member_pw}, 
+    member_nickname=#{member_nickname}, member_lat=#{member_lat}, member_lng=#{member_lng}
+    where member_code = #{member_code}
+  </update>
+  
+  <delete id="delete">
+    delete from member
+    where member_code = #{member_code}
+  </delete>
+  
+<select id="login" resultType="Member">
+     select member_code, member_email, member_pw, member_nickname, member_lat, member_lng, member_birth
+     from member
+     where member_email=#{member_email}
+     and member_pw=#{member_pw}
+  </select>
+  
+  <select id="listAll" resultType="Member"><!-- 이슈글의 위도,경도,반경을 보내서 회원DB의 위도,경도와 거리계산해서 반경보다 작은거출력하는쿼리문-->
+ <![CDATA[
+ 	select member_code , member_lng, member_lat,ROUND(( 6371 * acos( cos( radians( member_lng) ) * cos( radians(#{lat}) )
+          * cos( radians(#{lng} ) - radians(member_lat) )
+          + sin( radians( member_lng) ) * sin( radians(#{lat}) ) ) ))*1000 AS distance
+from  member 
+having distance<#{radius}
+]]>
+  </select>
+
+  
+  <select id="listPage" resultType="Member">
+     select *
+     from member
+     order by member_code desc
+     limit #{startRecord}, #{recordsPerPage}
+  </select>
+  
+  <select id="totalCount" resultType="Integer">
+     select count(*) from member
+  </select>
+  
+  <select id="getReceiver" resultType="Member">
+	  select member_code
+	  from member
+	  where member_nickname=#{member_nickname}
+  </select>
+</mapper>
