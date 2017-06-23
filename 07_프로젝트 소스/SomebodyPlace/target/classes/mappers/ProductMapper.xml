@@ -10,7 +10,30 @@
 	<select id="selectProductList" resultType="Product">
 		select * from product where place_code = #{place_code}
 	</select>
+	
 	<select id="selectProduct" resultType="Product">
-		select * from product where product_code = #{product_code}
+		select i.product_code, i.place_code, i.product_name, i.product_img,
+		i.product_price, i.product_explanation, p.place_logo, p.place_name
+		from product i, place p
+		where p.place_code = i.place_code
+		and product_code = #{product_code}
 	</select>
+
+	<select id="selectAllProduct" resultType="Product">
+		select * from product
+		order by product_code desc
+	</select>
+
+   <select id="selectProductByDcate" resultType="Product">
+      select * 
+from post a, product b
+where a.product_code=b.product_code AND dcate_code=#{dcate_code};
+   </select>
+	
+	<select id="selectDetailInfo" resultType="Detail">
+		select * from detail
+		where detail_code = #{detail_code}
+	</select>
+
+	
 </mapper>

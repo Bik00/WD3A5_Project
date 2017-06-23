@@ -3,19 +3,45 @@
     margin-top: 15px;
 }
 
+/* 신청 정보 */
+
+.postRequest_info {
+	    box-shadow : 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,1);
+	 
+	 margin:auto;
+	width:80%;
+	height:40%;
+	text-align:center;
+	margin-bottom:2%;
+}
 .postRequest_no_img{
-	
 	width:30%;
 }
+
 .payment_list{
+	margin:auto;
 	width:100%;
 	height:auto;
-	float:left;
-
+	
+}
+.payment_list td {
+	text-align:center;
+}
+.payment_list_01 {
+	width:20%;
+	color:black;
+}
+.payment_list_02 {
+	width:20%;
 }
 .postRequest_div{
-	width:100%;
+	    box-shadow : 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,1);
+	  border: 1px solid black;
+	width:80%;
+	margin:auto;
 }
+
+
 /* 이미지 */
 .post_img {
     width: 780px;
@@ -37,58 +63,33 @@
 }
  
 /* 타입 */
-.post_type {
+.postRequest_type {
     width: 100%;
-    height: auto;
-    left: 20px;
+    height:40%;
     position: relative;
-    display: table-cell;
-    vertical-align: top;
+/*     display: table-cell;
+    vertical-align: top; */
+    margin:auto;
 }
-.post_type div {
+.request_type div {
     margin-bottom: 10px;
 }
-/* 상품명 */
-.post_title {
-    height: 60px;
-    font-size: 2em;
-    text-align: center;
-    padding-top: 10px;
-    border-bottom: 1px solid #EAEAEA;
+
+.postRequest_btnBox{
+	margin:auto;
+	float:center;
+	
 }
-/* 상품 설명 */
-.post_description { 
-    height: 70px;
+/* 신청 상세 정보 */
+
+.payment_orderInfo {
+	width:65%;
 }
-/* 상품 가격 */
-.post_price {
-    height: 30px;
+
+.payment_priceInfo {
+	width:35%;
 }
-/* 상품 옵션 */
-.post_options {
-    height: auto;
-}
-/* 처리 버튼 */
-.post_btns {
-    height: 90px;
-    border-bottom-color: white;
-}
-.post_request {
-    margin: 10px;
-    width: 500px;
-    background: #da405c;
-    color: white;
-}
-.post_cart, .post_wish {
-    margin: 0 0 0 10px; 
-    width: 243px;
-    color: #da405c;
-}
-/* 상세설명을 위한 에디터창 */
-.post_content {
-    width: 100%;
-    height: auto;
-    min-heght: 500px;
-    border: 1px solid #EAEAEA;
-    margin-top: 10px;
+
+.payment_Option {
+	margin:auto;
 }

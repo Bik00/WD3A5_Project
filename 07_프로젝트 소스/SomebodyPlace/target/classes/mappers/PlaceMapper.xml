@@ -56,6 +56,11 @@
   		select * from place
   	where member_code = #{member_code}
   </select>
+ 
+    <select id="MainPlacelist" resultType="place">  <!-- 별칭사용 -->
+  		select * from place
+  	where dcate_code = #{dcate_code}
+  </select>
   
   <select id="listPage" resultType="place">
   	select *

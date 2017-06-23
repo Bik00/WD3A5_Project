@@ -55,4 +55,16 @@ public class MemberServiceImpl implements MemberService {
 		return dao.listAll(Lat,Lng,Radius);
 	}
 
+	@Override
+	public void requestupdate(Member mem) throws Exception {
+		dao.requestupdate(mem);
+		
+	}
+
+	@Override
+	public List<Member> orderlist(int member_code) {
+		// TODO Auto-generated method stub
+		return dao.orderlist(member_code);
+	}
+
 }

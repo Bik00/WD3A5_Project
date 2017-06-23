@@ -30,4 +30,10 @@ public class PostServiceImpl implements PostService {
 		return dao.selectProductCode(board_code);
 	}
 
+	@Override
+	public String searchType(int product_code) throws Exception {
+		// TODO Auto-generated method stub
+		return  dao.searchType(product_code);
+	}
+
 }

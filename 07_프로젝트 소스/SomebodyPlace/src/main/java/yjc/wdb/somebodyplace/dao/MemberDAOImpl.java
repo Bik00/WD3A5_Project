@@ -73,4 +73,17 @@ public class MemberDAOImpl implements MemberDAO {
 		
 		   return sqlSession.selectList(namespace + ".listAll",map);
 	}
+
+	@Override
+	public void requestupdate(Member mem) throws Exception {
+		// TODO Auto-generated method stub
+		sqlSession.update(namespace + ".moneysuccess", mem);
+	}
+
+	@Override
+	public List<Member> orderlist(int member_code) {
+		// TODO Auto-generated method stub
+		System.out.print("DAOIMPL"+member_code);
+		return sqlSession.selectList(namespace+".orderlist", member_code);
+	}
 }

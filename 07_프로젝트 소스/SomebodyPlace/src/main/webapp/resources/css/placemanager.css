@@ -2,6 +2,7 @@
 .placemanager_category {
     /*border: 1px dashed skyblue;*/
     width:20%;
+    height:400px;
     margin-top: 10px;
     background: #da405c;
     box-shadow : 0 5px 20px 0 rgba(0,0,0,0.25), 0 5px 60px 0 rgba(0,0,0,0.19);
@@ -14,6 +15,13 @@
     display: block;
     color: white;
     font-size: 1.2em;
+}
+
+.placemanager_category button{
+	width:60%;
+	height:10%;
+	margin-left:20%;
+	margin-top:5%;
 }
 
 /* �뵆�젅�씠�뒪 愿�由� �궡�슜 */
@@ -30,7 +38,7 @@
 /* �뵆�젅�씠�뒪 愿�由� - �젙�궛 �궡�뿭 */
 
 .placemanager_budget {
-    box-shadow : 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+    box-shadow : 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,1);
 }
 .placemanager_budget_title {
     font-size:26px;
@@ -57,7 +65,7 @@
 
 .placemanager_request {
     width:100%;
-    box-shadow : 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+      box-shadow : 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,1);
     margin-top:50px;
 }
 .placemanager_request_title {
@@ -88,7 +96,7 @@
 
 .placemanager_product {
     width:100%;
-    box-shadow : 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+  box-shadow : 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,1);
     margin-top:50px;
     margin-bottom:100px;
 }

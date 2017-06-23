@@ -1,5 +1,7 @@
 package yjc.wdb.somebodyplace.bean;
 
+import java.util.Date;
+
 public class Member {
 	private String member_email;
 	private String member_pw;
@@ -7,6 +9,73 @@ public class Member {
 	private String member_birth;
 	private int member_code;
 	private int distance;
+	private String member_name;
+	private Date request_date;
+	private String product_img;
+	private String product_name;
+	private String amount;
+	private int request_list_totalprice;
+	private String request_status;
+	
+	
+	public Date getRequest_date() {
+		return request_date;
+	}
+	public void setRequest_date(Date request_date) {
+		this.request_date = request_date;
+	}
+	public String getProduct_img() {
+		return product_img;
+	}
+	public void setProduct_img(String product_img) {
+		this.product_img = product_img;
+	}
+	public String getProduct_name() {
+		return product_name;
+	}
+	public void setProduct_name(String product_name) {
+		this.product_name = product_name;
+	}
+	public String getAmount() {
+		return amount;
+	}
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+	public int getRequest_list_totalprice() {
+		return request_list_totalprice;
+	}
+	public void setRequest_list_totalprice(int request_list_totalprice) {
+		this.request_list_totalprice = request_list_totalprice;
+	}
+	public String getRequest_status() {
+		return request_status;
+	}
+	public void setRequest_status(String request_status) {
+		this.request_status = request_status;
+	}
+
+	
+	public String getMember_name() {
+		return member_name;
+	}
+	public void setMember_name(String member_name) {
+		this.member_name = member_name;
+	}
+	public String getMember_addr() {
+		return member_addr;
+	}
+	public void setMember_addr(String member_addr) {
+		this.member_addr = member_addr;
+	}
+	public int getMember_phone() {
+		return member_phone;
+	}
+	public void setMember_phone(int member_phone) {
+		this.member_phone = member_phone;
+	}
+	private String member_addr;
+	private int member_phone;
 	
 	public int getDistance() {
 		return distance;

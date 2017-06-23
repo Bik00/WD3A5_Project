@@ -14,6 +14,7 @@ public interface PlaceService {
 	public void modify(Place b) throws Exception;
 	public void remove(int place_code) throws Exception;
 	public List<Place> listAll() throws Exception;
+	public List<Place> MainPlacelist(int dcate_code) throws Exception;
 	public int getTotalCount() throws Exception;
 	public int getPlaceCode(int member_code) throws Exception;
 }

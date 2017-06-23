@@ -31,4 +31,10 @@ public class PostDAOImpl implements PostDAO {
 		return sql.selectList(NAMESPACE + ".selectProductCode", board_code);
 	}
 
+	@Override
+	public String searchType(int product_code) throws Exception {
+		// TODO Auto-generated method stub
+		return sql.selectOne(NAMESPACE + ".searchType", product_code);
+	}
+
 }

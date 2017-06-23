@@ -364,8 +364,8 @@
    <div id="map_canvas" style="width: 100%; height: 40%;"></div>
 
    <div>
-      <input type="text" class="form-control" id="result2" name="lng"
-         value="" style="width: 50%;"> <input type="text"
+      <input type="hidden" class="form-control" id="result2" name="lng"
+         value="" style="width: 50%;"> <input type="hidden"
          class="form-control" id="result3" name="lat" value=""
          style="width: 50%;">
    </div>

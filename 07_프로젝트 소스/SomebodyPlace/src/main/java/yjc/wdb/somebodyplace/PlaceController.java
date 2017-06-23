@@ -1,10 +1,12 @@
 package yjc.wdb.somebodyplace;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -25,6 +27,7 @@ import yjc.wdb.somebodyplace.bean.Place;
 import yjc.wdb.somebodyplace.bean.Post;
 import yjc.wdb.somebodyplace.bean.PostContent;
 import yjc.wdb.somebodyplace.bean.Product;
+import yjc.wdb.somebodyplace.bean.Request;
 import yjc.wdb.somebodyplace.service.BoardService;
 import yjc.wdb.somebodyplace.service.CateService;
 import yjc.wdb.somebodyplace.service.DetailService;
@@ -34,6 +37,7 @@ import yjc.wdb.somebodyplace.service.PlaceService;
 import yjc.wdb.somebodyplace.service.PostContentService;
 import yjc.wdb.somebodyplace.service.PostService;
 import yjc.wdb.somebodyplace.service.ProductService;
+import yjc.wdb.somebodyplace.service.RequestService;
 
 @Controller
 public class PlaceController {
@@ -55,6 +59,8 @@ public class PlaceController {
 	private MemberService memberservice;
 	@Inject
 	private BoardService boardservice;
+	@Inject
+	private RequestService requestservice;
 	
 	public static String place_name ;
 	public static String place_logo ;
@@ -118,13 +124,22 @@ public class PlaceController {
 			model.addAttribute("mcate_code",categori1);
 			
 			String categori2=placeservice.searchcategori2(member_code);
-			model.addAttribute("dcate_code",categori2);
 			
+			List<Request> request_list = requestservice.readMyPlaceRequestList(member_code);
+			System.out.println(request_list);
+			model.addAttribute("request_list", request_list);
+
+			
+			model.addAttribute("dcate_code",categori2);
 			model.addAttribute("placeMPage", "placeManagerStats.jsp");
 			model.addAttribute("placePage", "../manager/placeManager.jsp");
 			model.addAttribute("cont", "place/place.jsp");
+			
+			
 			return "index";
 		} catch (Exception e) {
+			
+			
 			model.addAttribute("PlaceX",3);
 			model.addAttribute("cont", "place/placeAddForm.jsp");
 			return "index";
@@ -286,6 +301,9 @@ public class PlaceController {
 		// 상품 정보 가져오기
 		Product product = productservice.selectProduct(product_code);
 		model.addAttribute("product", product);
+		//타입 가져오기(광민)
+		String type=postservice.searchType(product_code);
+		model.addAttribute("type",type);
 		// 옵션 정보 가져오기
 		List<Option> option = optionservice.selectOption(product_code);
 		model.addAttribute("option", option);
@@ -308,17 +326,43 @@ public class PlaceController {
 		List<PostContent> post_content = postcontentservice.selectPostContent(post_code);
 		model.addAttribute("postContent", post_content);
 		// 게시글의 플레이스 정보 가져오기
-		model.addAttribute("place_logo", place_logo);
-		model.addAttribute("place_name",place_name);
-		System.out.println("로고"+ place_logo);
-		System.out.println("이름"+ place_name);
+		model.addAttribute("place_logo", product.getPlace_logo());
+		model.addAttribute("place_name", product.getPlace_name());
+		
+		// 현재 로그인한 회원의 코드
+		model.addAttribute("member_code", MemberController.member_code);
 		
 		return "index";
 	}
 	
 	//신청하기 버튼 클릭시 
-	@RequestMapping(value="postRequest")
-	public String postRequest(Model model, int product_code) throws Exception{
+	@RequestMapping(value="postRequest", method=RequestMethod.POST)
+	public String postRequest(Model model, HttpServletRequest req,Post post) throws Exception{
+	
+	
+		int product_code = Integer.parseInt(req.getParameter("product_code"));
+		int member_code = Integer.parseInt(req.getParameter("member_code"));
+		//여기서부터 광민 
+		String type2=req.getParameter("type");
+		String type[]=type2.split(",");
+		for(int k=0; k<type.length;k++){
+			System.out.println(type[k]);
+		}
+		model.addAttribute("type",type);
+		//광민
+		String[] detail_code = req.getParameterValues("detail_code");
+		List<Detail> detail_info = new ArrayList<Detail>();
+		
+		for(int k = 0; k<detail_code.length;k++) {
+			Detail detail = productservice.selectDetailInfo(Integer.parseInt(detail_code[k]));
+			detail_info.add(k, detail);
+		}
+
+		model.addAttribute("detail_info", detail_info);
+		model.addAttribute("product_price", Integer.parseInt(req.getParameter("product_price")));
+		model.addAttribute("product_Total", Integer.parseInt(req.getParameter("product_Total")));
+		model.addAttribute("type", type);
+		
 		model.addAttribute("placePage", "postRequest.jsp");
 		model.addAttribute("cont", "place/place.jsp");
 		
@@ -343,14 +387,50 @@ public class PlaceController {
 		}
 		model.addAttribute("detailArray", detailArray);
 		// 게시글 내용 정보 가져오기
-		int post_code = postservice.selectPostCode(product_code);
-		List<PostContent> post_content = postcontentservice.selectPostContent(post_code);
-		model.addAttribute("postContent", post_content);
+	
 		// 게시글의 플레이스 정보 가져오기
-		model.addAttribute("place_logo", place_logo);
-		model.addAttribute("place_name", place_name);
+		model.addAttribute("place_logo", product.getPlace_logo());
+		model.addAttribute("place_name", product.getPlace_name());
 		
 		return "index";
 	}
 	
+	
+	
+	//결제하기 버튼 클릭시 
+	@RequestMapping(value="moneysuccess", method=RequestMethod.POST)
+	public String moneysuccess(Model model, Member member, HttpServletRequest req,String request_type) throws Exception{
+	
+		// 총가격
+		int total_price = Integer.parseInt(req.getParameter("productTotalPrice"));
+		
+		//회원 db업데이트!! 
+		memberservice.requestupdate(member);
+		
+		int a= member.getMember_code();
+		//신청 테이블 인설트 
+		requestservice.insertRequest(a);
+		
+		Request request = new Request();
+		int product_code = Integer.parseInt(req.getParameter("productCodeNum"));
+		System.out.print("선택한타입"+request_type);
+		request.setRequest_type(request_type);
+		request.setProduct_code(product_code);
+		request.setRequest_code(requestservice.readRequestCode(a));
+		request.setRequest_list_totalprice(total_price);
+		
+		requestservice.insertRequestList(request);
+		request.setRequest_list_code(requestservice.readRequestListCode(request.getRequest_code()));
+
+		
+		String[] detail_code = req.getParameterValues("detailCodeNum");
+		for(int k = 0; k<detail_code.length;k++) {
+			System.out.println(detail_code[k]);
+			request.setDetail_code(Integer.parseInt(detail_code[k]));
+			requestservice.insertRequestOption(request);
+		}
+		
+	    model.addAttribute("cont", "main.jsp");
+	    return "index";
+	}
 }

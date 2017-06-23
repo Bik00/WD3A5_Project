@@ -12,7 +12,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="./resources/css/main.css">
     <link rel="stylesheet" href="./resources/css/loginForm.css">
-    <link rel="stylesheet" href="./resources/css/place.css">
+    <link rel="stylesheet" href="./resources/css/place.css?ver=2">
     <link rel="stylesheet" href="./resources/css/postForm.css?ver=1">
     <link rel="stylesheet" href="./resources/css/joinForm.css">
     <link rel="stylesheet" href="./resources/css/mypage.css">
@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="./resources/css/chatting.css">
 	<link rel="stylesheet" href="./resources/css/addIssue.css">
 	<link rel="stylesheet" href="./resources/css/postDefault.css">
-	<link rel="stylesheet" href="./resources/css/postRequest.css">
+	<link rel="stylesheet" href="./resources/css/postRequest.css?ver=2">
            
            
 	<script src="./resources/js/issue.js?ver=5"></script>   
@@ -42,7 +42,6 @@
     <script src="./resources/js/place.js?ver=1"></script>
     <script src="./resources/js/postForm.js?ver=29"></script>
     <script src="./resources/js/mypage.js"></script>
-    <script src="./resources/js/issue.js"></script>
     <script src="./resources/js/placeMain.js"></script>
     <script src="./resources/js/placeManager.js"></script>
     <script src="./resources/js/currentBudget.js"></script>  
@@ -51,7 +50,8 @@
     <script src="./resources/js/placeAddForm.js?ver=2"></script>
     <script src="./resources/js/categorySetting.js?ver=2"></script>
     <script src="./resources/js/placeHome.js?ver=3"></script>
-	<script src="./resources/js/postDefault.js?ver=3"></script>
+	<script src="./resources/js/postDefault.js?ver=4"></script>
+	<script src="./resources/js/postRequest.js?ver=4"></script>
        
     <title>Somebody Place</title>
 </head>
@@ -79,37 +79,36 @@
             <div class="dropdown">
                 <span>배달</span>
                 <div class="dropdown-content">
-                    <a href="#">음식</a>
-                    <a href="#">꽃</a>
-                    <a href="#">세탁</a>
+                    <a href="main?dcate_code=1">음식</a>
+                    <a href="main?dcate_code=2">꽃</a>
+                    <a href="main?dcate_code=3">세탁</a>
                 </div>
             </div>
             <div class="dropdown">
                 <span>쇼핑</span>
                 <div class="dropdown-content">
-                    <a href="#">패션</a>
-                    <a href="#">생활</a>
-                    <a href="#">디지털</a>
+                    <a href="main?dcate_code=4">패션</a>
+                    <a href="main?dcate_code=5">생활</a>
+                    <a href="main?dcate_code=6">디지털</a>
                 </div>
             </div>
             <div class="dropdown">
                 <span>여가</span>
                 <div class="dropdown-content">
-                    <a href="#">미용실</a>
-                    <a href="#">네일</a>
-                    <a href="#">화장품</a>
+                    <a href="main?dcate_code=7">공연</a>
+                    <a href="main?dcate_code=8">숙박</a>
                 </div>
             </div>
             <div class="dropdown">
                 <span>뷰티</span>
                 <div class="dropdown-content">
-                    <a href="#">link1</a>
-                    <a href="#">link2</a>
-                    <a href="#">link3</a>
+                    <a href="main?dcate_code=9">미용실</a>
+                    <a href="main?dcate_code=10">네일</a>
+                    <a href="main?dcate_code=11">화장품</a>
                 </div>
             </div>
             <div class="dropdown">
-        		 <span class="main_issue">이슈</span>
+               <span class="main_issue">이슈</span>
             </div>
         </div>
         

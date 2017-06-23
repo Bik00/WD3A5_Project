@@ -9,7 +9,7 @@
 	content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta charset="UTF-8">
 <script type="text/javascript" src="<c:url value="./resources/js/sockjs.js"/>"></script>
-<script src="./resources/js/issue.js"></script>
+<!-- <script src="./resources/js/issue.js"></script> -->
 <title>Somebody Place</title>
 </head>
 
@@ -25,8 +25,7 @@
 	<br>
 	<br>
 	<br>
-	<br>
-	<br>
+	
 	<br>
 	<div class="issue_searchDiv">
 		<br>
@@ -44,9 +43,9 @@
 	</div>
 
 	<c:forEach items="${memberlist}" var="list">
-				
+			<%-- 	
 					회원코드가　${list.member_code}<br>위도${list.member_lng}　　경도${list.member_lat}<br>
-					이슈와의 거리 ${list.distance}M에게알림 <br>
+					이슈와의 거리 ${list.distance}M에게알림 <br> --%>
 		<script>
 	          
 	$(document).ready(function(){
@@ -81,14 +80,14 @@
 	
 	   	<c:if test="${memberlist!= null }">         
         		<script>
-						document.write(count);
-						
+						//document.write(count);
+						alert(count+"명에게알림");
 				</script>
-				명에게 보냄 
+			
 		</c:if> 
 	
 
-<input type="text" class="push">
+<input type="hidden" class="push">
 
 	<c:forEach items="${list}" var="issue">
 		<div class="issue_box" data-issue="${issue.issue_code}">
@@ -185,7 +184,7 @@
 
 			</div>
 		</div>
-		<input type="text" value="${issue.issue_code}">
+		<input type="hidden" value="${issue.issue_code}">
 		
 
 	</c:forEach>

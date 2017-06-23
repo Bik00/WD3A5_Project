@@ -29,6 +29,12 @@
     where member_code = #{member_code}
   </update>
   
+  <update id="moneysuccess">
+	update member
+	set member_name=#{member_name}, member_addr=#{member_addr}, member_phone=#{member_phone}
+	where member_code=#{member_code}
+	</update>
+	
   <delete id="delete">
     delete from member
     where member_code = #{member_code}
@@ -50,6 +56,19 @@ from  member
 having distance<#{radius}
 ]]>
   </select>
+  
+    <select id="orderlist" resultType="Member">
+select m.request_date,p.product_img, p.product_name, r.amount,r.request_list_totalprice, m.request_status
+		from request_list r, product p, (select m.member_code, m.member_nickname, r.request_code, r.request_date,r.request_status
+									from member m, request r
+									where r.member_code = m.member_code) m
+		where r.product_code = p.product_code
+		and m.request_code = r.request_code
+		and m.member_code=#{member_code}
+		order by m.request_date desc
+  </select>
+  
+  
 
   
   <select id="listPage" resultType="Member">

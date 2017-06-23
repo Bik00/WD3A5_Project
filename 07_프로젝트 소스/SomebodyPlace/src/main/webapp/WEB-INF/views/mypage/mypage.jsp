@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 
-    
+   <input type="hidden" value="${member_code}" class="member_code">
     <div class="mypage_outdiv">
         <div class="mypage_indiv" id="mypage_indiv_modifyForm">
             <img src="./resources/img/회원정보.png" class="mypage_icon"><br>

@@ -25,9 +25,9 @@
 	function jusoCallBack(roadAddrPart1) {
 		// 팝업페이지에서 주소입력한 정보를 받아서, 현 페이지에 정보를 등록합니다.
 
-		alert("에드이슈");
+		
 		document.form.roadAddrPart1.value = roadAddrPart1;
-		alert("에드이슈2");
+	
 		//주소를 검색 완료하자마자 지도에 표시 
 		loshow();
 
@@ -36,7 +36,7 @@
 	//input창에 검색한 주소로 그 주소의 위도, 경도 값을 구해  지도에 표시하는 함수 
 	function loshow() {
 		var t = $('#roadAddrPart1').val();
-		alert(t);
+	
 		var key = 'AIzaSyC-f8h17-0IA4BncRf-Npxkwe_NS6PVh0A';
 
 		$.ajax({
@@ -106,7 +106,7 @@
 	<br>
 	<form id="form" name="form">
 
-		<input type="text" value="${member_code}" name="member_code">
+		<input type="hidden" value="${member_code}" name="member_code">
 		<div class="form-group">
 			<label>내용</label><br>
 			<textarea class="form-control" rows="15" name="Issue_content">
@@ -194,7 +194,7 @@
 							'click',
 							function(event) {
 
-								alert("click이벤트 발생!!");
+								
 								placeMarker(event.latLng);
 
 								//클릭시 위도 경도를 이용해 한글 주소로 바꾸는 ajax 요청 	
@@ -242,8 +242,7 @@
 												}
 											});
 
-									alert(test);
-									alert(test2);
+								
 									//test,test2,seek 를 넣고 다시 실행 
 									myMap(test, test2, seek);
 

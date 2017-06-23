@@ -13,6 +13,10 @@
 	<select id="selectPostCode" resultType="int">
 		select post_code from post where product_code = #{product_code}
 	</select>
+	<select id="searchType" resultType="String">
+		select type from post where product_code = #{product_code}
+	</select>
+	
 	<select id="selectProductCode" resultType="int">
 		select product_code from post where board_code = #{board_code}
 	</select>

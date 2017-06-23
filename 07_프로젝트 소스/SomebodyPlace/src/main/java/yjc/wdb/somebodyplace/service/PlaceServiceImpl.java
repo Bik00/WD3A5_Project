@@ -82,4 +82,10 @@ public class PlaceServiceImpl implements PlaceService  {
 		return dao.getPlaceCode(member_code);
 	}
 
+	@Override
+	public List<Place> MainPlacelist(int dcate_code) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.MainPlacelist(dcate_code);
+	}
+
 }

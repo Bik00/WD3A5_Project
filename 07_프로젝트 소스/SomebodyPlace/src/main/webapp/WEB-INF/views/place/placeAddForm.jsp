@@ -22,7 +22,7 @@
 		      <label for="reserveForm_ImgUpload" class="reserveForm_img">
 		           <p>클릭해서<br>로고를<br>등록하세요</p>
 		      </label>
-		      <input type=file id="reserveForm_ImgUpload" name="Place_logo">
+		      <input type="file" id="reserveForm_ImgUpload" name="Place_logo">
 	 	  </div><br><br><br>
 	</div><br><br><br><br><br><br><br><br>
 	

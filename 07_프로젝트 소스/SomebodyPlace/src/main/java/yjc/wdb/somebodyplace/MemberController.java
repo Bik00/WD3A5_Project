@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import yjc.wdb.somebodyplace.bean.Member;
+import yjc.wdb.somebodyplace.bean.Product;
 import yjc.wdb.somebodyplace.service.MemberService;
+import yjc.wdb.somebodyplace.service.ProductService;
 
 @SessionAttributes({"member_code", "member_email"})
 @Controller
@@ -22,6 +24,8 @@ public class MemberController {
 	
 		@Inject
 		private MemberService service;
+		@Inject
+		private ProductService productservice;
 		
 		public static int member_code;
 		
@@ -88,6 +92,10 @@ public class MemberController {
 	      	    	
 	      	    	session.setAttribute("member_email", x.get(0).getMember_email());
 	      	    	member_code = x.get(0).getMember_code();
+	      	    	//로그인시 메인 상품 출력 
+	      	       List<Product> list = productservice.selectAllProduct();//광민
+	  	         model.addAttribute("Product", list); 
+	      	    	
 	      	    	model.addAttribute("cont", "main.jsp");
 	      	    }else {
 	      	    	session.invalidate();

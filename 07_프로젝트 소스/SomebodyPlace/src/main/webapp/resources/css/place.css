@@ -1,9 +1,10 @@
 @CHARSET "UTF-8";
-.place { height: 100%; }
+.place { height: 100%; width:100%;}
 /* 플레이스 제목 */
 
 .place_placename{
-	
+	font-family: '휴먼편지체';
+	font-size:5em;
 	color:red;
 	float:right;
 	margin-right:44%;

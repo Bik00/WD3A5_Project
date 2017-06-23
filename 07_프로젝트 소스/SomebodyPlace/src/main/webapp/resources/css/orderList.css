@@ -1,5 +1,5 @@
 
-/* ¿À´Ã , 1ÁÖÀÏ 1°³¿ù 3°³¿ù 6°³¿ù µî Á¶È¸ Div */
+/* ï¿½ï¿½ï¿½ï¿½ , 1ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ï¿½ï¿½ 3ï¿½ï¿½ï¿½ï¿½ 6ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½È¸ Div */
 .orderList_orderDate {
 	margin: auto;
 	margin-top: 10px;
@@ -7,7 +7,7 @@
 	padding: 10px;
 	border: solid 5px #EAEAEA;
 }
-/* ¸ñ·Ï¸®½ºÆ® table  */
+/* ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½Æ® table  */
 .orderList_table-responsive {
 	width:100%;
 	margin: auto;
@@ -15,22 +15,23 @@
 	position: relative;
 	margin-top: 10px;
 }
-/* ¸ñ·Ï¸®½ºÆ® table  */
+/* ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½Æ® table  */
 .orderList_table {
 	margin: auto;
 	width: 100%;
 }
-/* »óÇ° img   */
+/* ï¿½ï¿½Ç° img   */
 .orderList_table img{
 	width:20%;
+	margin-top:3%;
 }
-/* ORDER LISTÁ¦¸ñ */
+/* ORDER LISTï¿½ï¿½ï¿½ï¿½ */
 .orderList_title{
 	margin: auto;
 	float: center;
 	color: #ef5470;
 }
-/* ¸ðµç ¹öÆ°  */
+/* ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°  */
 .orderList_btn {
     color: #ef5470;
 }

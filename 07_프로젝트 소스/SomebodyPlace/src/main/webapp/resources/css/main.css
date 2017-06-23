@@ -126,13 +126,17 @@
     margin: 30px 0 100px 0;
 }
 .product_box {
+	    box-shadow : 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,1);
+
+      display: inline-block;
+
     padding: 10px; 
-    width: 250px;
-    height: 400px;
+    width: 220px;
+    height: 450px;
     float: left; 
-    box-shadow: 1px 2px 1px 1px rgba(0,0,0,0.1);
-    margin: 20px 8px 20px;
-    border: 0.5px solid #EAEAEA;
+   
+    margin: 20px 15px 20px;
+    
     overflow: hidden;
 }
 .product_img {
@@ -143,10 +147,10 @@
 }
 .product_img > h1 {
     text-align: center;
-    padding-top : 100px;
+    
 }
 .product_info {
-    margin-top: 10px;
+	margin-top
 }
 .product_info div {
     text-align: center;
@@ -154,3 +158,136 @@
 .float_clear {
     clear: both;
 }
+.place_logo2{
+	width:100%;
+	height:100%;
+}
+
+   body {
+      background-color: white;
+   }
+   #place_content {
+      width: 100%;
+      text-align: center;
+      margin: auto;
+   }
+   #place_box {
+    border: solid 1px black;
+      display: inline-block;
+      margin:auto;
+      width: 45%;
+      float:center;
+      height: 150px;
+      margin-top: 5%;
+      margin-left: 2%;
+      padding: 2%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      background: #FAFAFA;
+      float: left;
+          box-shadow : 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,1);
+   }
+   #place_img {
+      border: solid 0.1px #EAEAEA;
+      display: block;
+      width: 40%;
+      height: 100%;
+      float: left;
+      overflow: hidden;
+      border-radius: 100%;
+      background-color: gray;
+   }
+   #place_info {
+      display: block;
+      height:80%;
+      width: 55%;
+      float: right;
+      padding: 1%;
+   }
+   #place_img img {
+      {
+         width: 100%;
+
+      }
+   }
+   #place_info .red {
+      color: red;
+   }
+   h2 {
+      text-align: center;
+   }
+   .place_search {
+         margin: auto;
+         width: 100%;
+      }
+      
+         #lodging_content {
+      width: 100%;
+      text-align: center;
+   }
+   #lodging_box {
+       box-shadow : 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,1);
+    border: solid 1px black;
+      display: inline-block;
+      margin: 0 auto;
+      width: 45%;
+      height: 80%;
+      margin-top: 5%;
+      margin-left: 2%;
+      padding: 2%;
+   }
+   #lodging_img {
+      display: block;
+      width: 500px;
+      height: 400px;
+      overflow: hidden;
+   }
+   #lodging_info {
+      display: block;
+      height: 50%;
+      width: 100%;
+      padding: 1%;
+   }
+   #lodging_img img {
+      {
+         width: 100%;
+         border:solid 3px red;
+      }
+   }
+   #lodging_info .red {
+      color: red;
+   }
+   h2 {
+      text-align: center;
+   }
+   .lodging_search {
+         width: 100%;
+      }
+   @media all and (max-width: 639px) {
+      #lodging_box {
+         width: 47%;
+         height: 250px;
+         margin-top: 4%;
+      }
+      #lodging_img {
+         width: 100%;
+         height: 100%;
+      }
+      .lodging_search {
+         width: 100%;
+      }
+   }
+      
+
+   @media all and (max-width: 639px) {
+      #place_box {
+         width: 80%;
+         margin-top: 4%;
+      }
+      #place_img {
+         border-radius: 50%;
+      }
+      .place_search {
+         width: 100%;
+      }
+   }
+
