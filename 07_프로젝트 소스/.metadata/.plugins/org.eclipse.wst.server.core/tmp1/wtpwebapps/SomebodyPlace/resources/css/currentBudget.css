@@ -1,0 +1,42 @@
+.budgetDate {
+	margin: auto;
+	margin-top: 10px;
+	width: 90%;
+	padding: 10px;
+	border: solid 5px #EAEAEA;
+}
+
+.table-responsive {
+	margin: auto;
+	text-align: center;
+	position: relative;
+	margin-top: 10px;
+}
+.table {
+	margin: auto;
+	width: 90%;
+	text-align:center;
+}
+.table img{
+	width:40%;
+	height:40%;
+}
+
+
+.table-responsive>h2 {
+	margin: auto;
+	float: center;
+	color: #ef5470;
+}
+
+.budget_button {
+    color: #ef5470;
+}
+
+.budget_option {
+	margin:auto;
+}
+.budget_amount>h2 {
+	margin: auto;
+	float: center;
+}

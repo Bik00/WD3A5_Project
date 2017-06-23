@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="yjc.wdb.somebodyplace.ProductMapper">
+	<insert id="insertProduct">
+		insert into product(place_code, product_name, product_img, product_price, product_explanation)
+		values (#{place_code},#{product_name},#{product_img},#{product_price},#{product_explanation})
+	</insert>
+	<select id="selectProductList" resultType="Product">
+		select * from product where place_code = #{place_code}
+	</select>
+	<select id="selectProduct" resultType="Product">
+		select * from product where product_code = #{product_code}
+	</select>
+</mapper>

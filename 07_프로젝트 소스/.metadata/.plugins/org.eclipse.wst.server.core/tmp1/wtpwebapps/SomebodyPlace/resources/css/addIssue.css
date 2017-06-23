@@ -1,0 +1,50 @@
+   
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 50%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+   
+   .addIssue_ImgUpload{
+   width:20%;
+   height:15%;
+   
+   }
+   
+   .addIssue_fileBox {
+    height: 30%;
+    width: 50%;
+    float: center;
+}
+.addIssue_fileBox label {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #EAEAEA;
+    background: #EAEAEA;
+    text-align: center;
+    display: table;
+    cursor: pointer;
+}
+.addIssue_fileBox label>p {
+    color: gray;
+    font-size: 120%;
+    display: table-cell; 
+    vertical-align: middle;
+}
+.addIssue_fileBox label:hover{
+    background: silver;
+}
+.addIssue_fileBox input[type=file] {
+    position: absolute;
+    display: none;
+}
+ @media only screen and (max-width : 630px) {
+ 
+
+ }

@@ -1,0 +1,29 @@
+
+
+/*wishlist 제목 */
+.wishlist_title {
+	margin: auto;
+	float: center;
+	color: #ef5470;
+}
+
+/* 목록 테이블 */
+.wishlist_table-responsive {
+	margin: auto;
+	text-align: center;
+	position: relative;
+	margin-top: 10px;
+}
+/* 목록 테이블 */
+.wishlist_table {
+	margin: auto;
+	width: 80%;
+}
+/* 목록 테이블속안 img  */
+.wishlist_table img {
+	width: 20%;
+}
+/* wishlist내 모든 버튼   */
+.wishlist_btn {
+    color: #ef5470;
+}

@@ -1,0 +1,75 @@
+@CHARSET "UTF-8";
+.place { height: 100%; }
+/* 플레이스 제목 */
+
+.place_placename{
+	
+	color:red;
+	float:right;
+	margin-right:44%;
+	
+}
+
+.place_logo{
+	width:20%;
+	height:80%;
+	
+}
+.place_title {
+    /*border: 1px dashed skyblue;*/
+    border: 2px solid #da405c;
+    margin-top: 10px;
+    height: 135px;
+    
+}
+.place_title > div {
+    font-size: 3em;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bold;
+    color: #da405c;
+}
+
+/* 플레이스 왼쪽 메뉴창 */
+.place_menu {
+   width: 250px;
+   float: left;
+   margin: 10px 10px 0 0;
+}
+
+/* 플레이스 관리, 글쓰기 버튼 */
+.place_manage {
+    /*border: 1px dashed skyblue;*/
+    height: 50px;
+    
+}
+.place_manage button{
+    margin-top: 10px;
+    
+    width: 120px;
+}
+
+/* 플레이스 카테고리*/
+.place_cate {
+    /*border: 1px dashed skyblue;*/
+    height: 900px;
+    margin-top: 10px;
+    padding-top: 20px;
+    background: #da405c;
+}
+.place_cate a {
+    display: block;
+    margin-left: 40px;
+    margin-top: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+}
+
+/* 플레이스 게시글 */
+.place_post {
+    /*border: 1px dashed skyblue;*/
+    width: 1073px;
+    height: 1000px;
+    margin: 10px 0 0 260px;
+}

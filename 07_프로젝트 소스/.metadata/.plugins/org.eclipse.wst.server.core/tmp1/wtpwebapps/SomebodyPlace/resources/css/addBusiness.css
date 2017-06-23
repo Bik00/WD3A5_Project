@@ -1,0 +1,38 @@
+.addForm{
+    width:50%;
+    margin:auto;
+}
+
+.addBtn {
+    background-color:#da405c;
+    color:white;
+}
+.addBtn:hover {
+    background-color:#da405c;
+    color:white;
+}
+
+.YaKwan {
+    color:#da405c;
+}
+
+.business_main{
+    width:100%;
+}
+
+
+.business_text{
+    width:28%;
+    float:left;
+}
+
+.busi {
+    width:2%;
+    margin-left:3%;
+    margin-right:3%;
+    float:left;
+}
+
+.confirm {
+    width:100px;
+}
