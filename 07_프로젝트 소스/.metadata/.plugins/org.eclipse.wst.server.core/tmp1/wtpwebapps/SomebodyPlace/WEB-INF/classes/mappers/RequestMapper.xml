@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="yjc.wdb.somebodyplace.RequestMapper">
+	<insert id="insertRequest">
+		insert into request(member_code)
+		values(#{member_code});
+	</insert>
+	<select id="Requestlist" resultType="Request">
+		select * from detail where option_code = #{option_code}
+	</select>
+	
+	<select id="readRequestCode" resultType="Integer">
+		select Max(request_code)
+		from request
+		where member_code = #{a}
+	</select>
+	
+	<insert id="insertRequestList">
+		insert into request_list(request_code, product_code, request_list_totalprice,request_type)
+		values(#{request_code}, #{product_code},  #{request_list_totalprice},#{request_type})
+	</insert>
+	
+	<insert id="insertRequestOption">
+		insert into request_option(request_list_code, detail_code)
+		values(#{request_list_code}, #{detail_code})
+	</insert>
+	
+	<select id="readRequestListCode" resultType="Integer">
+		select request_list_code
+		from request_list
+		where request_code = #{request_code}
+	</select>
+	
+	<select id="readMyPlaceRequestList" resultType="Request">
+		
+		select r.request_list_code, m.member_nickname, p.product_name, r.request_list_totalprice, r.amount, m.request_date,r.request_type
+		from request_list r, (select product_code, product_name
+					from product
+					where place_code = (select place_code from place
+					where member_code = #{member_code})) p, (select m.member_nickname, r.request_code, r.request_date
+									from member m, request r
+									where r.member_code = m.member_code) m
+		where r.product_code = p.product_code
+		and m.request_code = r.request_code
+		order by m.request_date desc
+		
+	</select>
+</mapper>

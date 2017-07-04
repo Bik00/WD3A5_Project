@@ -7,16 +7,15 @@
 
 <div class="placemanager">
      <div class="placemanager_category">
-	       <button class="placeManager_modifybtn">플레이스 수정</button>
-	       <button class="placeManager_requestlist">신청현황</button><br>
-	       <button class="placeManager_addBusiness">사업자등록</button>
-		   <button class="placeManager_category">카테고리관리</button><br>
-	       <button class="placeManager_currentBudget">정산관리</button>
+	
+	      <button class="btn btn-default placeManager_modifybtn">플레이스 수정</button>
+	    
+	       <button class="btn btn-default placeManager_requestlist">신청현황</button><br>
+	       <button class="btn btn-default placeManager_addBusiness">사업자등록</button><br>
+		   <button class="btn btn-default placeManager_category">카테고리관리</button><br>
+	       <button class="btn btn-default placeManager_currentBudget">정산관리</button>
  	</div>
  	<c:if test="${placeMPage != null }">         
         <jsp:include page="${placeMPage}"></jsp:include>
 	</c:if>
 </div>
-
-
-   

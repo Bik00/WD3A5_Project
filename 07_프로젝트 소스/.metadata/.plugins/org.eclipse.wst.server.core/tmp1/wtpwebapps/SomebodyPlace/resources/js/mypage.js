@@ -7,7 +7,8 @@ $(function(){
 	
 	/* mypage 에서 신청내역 클릭 했을시 */
 	$("#mypage_indiv_orderList").click(function(){
-		location.href="orderList";
+		var member_code=$(".member_code").val();
+		location.href="orderList?member_code="+member_code;
 	});
 
 	/* mypage 에서 장바구니 클릭 했을시 */

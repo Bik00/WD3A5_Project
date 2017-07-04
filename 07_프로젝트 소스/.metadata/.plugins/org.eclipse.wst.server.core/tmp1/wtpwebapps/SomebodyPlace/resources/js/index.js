@@ -36,7 +36,7 @@ $(function(){
 	
 	// 이슈 클릭시
 	$(".main_issue").click(function(){
-		alert("sd");
+
 		location.href = "issue";
 	});
 	
